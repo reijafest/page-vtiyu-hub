@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description" content="V体育 简明指南 —— 一款贴近生活的运动与数据辅助工具，亮点速览、使用建议与访问说明。">
+  <title>V体育 · 运动指南 & 使用备忘</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f6fafc;
+      color: #1e2b35;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* Hero 区 / 简明摘要 */
+    .hero {
+      background: linear-gradient(145deg, #e1f0f0 0%, #c8e6e6 100%);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      margin: 1rem 0 2.5rem 0;
+      box-shadow: 0 12px 24px -12px rgba(0, 80, 70, 0.18);
+      transition: all 0.2s ease;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #004d40;
+      display: inline-block;
+      border-bottom: 3px solid #4db6ac;
+      padding-bottom: 0.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      color: #1e3a3a;
+      margin-top: 0.25rem;
+    }
+
+    .hero .summary-tag {
+      display: inline-block;
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      border-radius: 50px;
+      padding: 0.35rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #00695c;
+      margin-top: 1rem;
+      border: 1px solid #b2dfdb;
+    }
+
+    /* 卡片网格 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 6px 18px rgba(0, 90, 80, 0.07);
+      border: 1px solid #d5eae7;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 100, 85, 0.12);
+      border-color: #80cbc4;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #00695c;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h3::before {
+      content: "✦";
+      font-size: 1.1rem;
+      color: #4db6ac;
+      display: inline-block;
+    }
+
+    .card p, .card ul {
+      font-size: 0.98rem;
+      color: #2b4040;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      padding: 0.25rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .card li::before {
+      content: "•";
+      color: #4db6ac;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .card .highlight-badge {
+      background: #e0f2f1;
+      border-radius: 40px;
+      padding: 0.2rem 0.9rem;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #004d40;
+      margin-top: 0.6rem;
+    }
+
+    /* 使用建议 + 访问说明 组合区 */
+    .advice-section {
+      background: #ffffffea;
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      padding: 2rem 2rem 1.8rem;
+      margin: 2rem 0;
+      border: 1px solid #c2dfda;
+      box-shadow: 0 6px 14px rgba(30, 60, 55, 0.06);
+    }
+
+    .advice-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #004d40;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #4db6ac;
+      padding-left: 0.8rem;
+    }
+
+    .advice-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+    }
+
+    .advice-item {
+      flex: 1 1 240px;
+      background: #f0f9f7;
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+      border-left: 4px solid #80cbc4;
+    }
+
+    .advice-item strong {
+      color: #00695c;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .advice-item p {
+      font-size: 0.95rem;
+      color: #1f3a35;
+    }
+
+    .note-box {
+      background: #e1f0ee;
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      margin: 1.8rem 0 0;
+      font-size: 0.95rem;
+      color: #1b403a;
+      border: 1px dashed #80cbc4;
+    }
+
+    .note-box a {
+      color: #00695c;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #b2dfdb;
+      transition: border-color 0.15s;
+    }
+
+    .note-box a:hover {
+      border-bottom-color: #004d40;
+    }
+
+    /* FAQ 摘要 / 小贴士 */
+    .faq-mini {
+      margin: 2.5rem 0;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #004d40;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid #d5eae7;
+      box-shadow: 0 2px 6px rgba(0, 70, 60, 0.03);
+    }
+
+    .faq-item q {
+      font-style: normal;
+      font-weight: 500;
+      color: #1b403a;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      font-size: 0.93rem;
+      color: #38534d;
+      margin-top: 0.2rem;
+    }
+
+    .footer-note {
+      border-top: 1px solid #c2dfda;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #4a6a64;
+    }
+
+    .footer-note a {
+      color: #00695c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #80cbc4;
+    }
+
+    /* 移动端微调 */
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .hero {
+        padding: 1.8rem 1.2rem;
+      }
+      .advice-section {
+        padding: 1.5rem 1.2rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .advice-item {
+        flex: 1 1 100%;
+      }
+      .faq-item {
+        padding: 0.8rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      body {
+        padding: 0.6rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- hero 简明摘要 -->
+    <div class="hero">
+      <h1>V体育 · 日常运动指南</h1>
+      <p>从热身到恢复，留意节奏与身体信号。<br>一份贴近生活的小备忘，帮你更自在地动起来。</p>
+      <span class="summary-tag">⚡ 辅助 · 记录 · 提醒</span>
+    </div>
+
+    <!-- 亮点卡片网格 -->
+    <div class="grid-cards">
+      <div class="card">
+        <h3>亮点速览</h3>
+        <ul>
+          <li>运动计划轻量管理，不拘一格</li>
+          <li>数据概览一目了然，留意日常趋势</li>
+          <li>融入生活场景，不拘泥于专业门槛</li>
+          <li>无过度承诺，保持工具本分</li>
+        </ul>
+        <span class="highlight-badge">适合多数日常活动</span>
+      </div>
+      <div class="card">
+        <h3>合适的场景</h3>
+        <p>无论是晨跑、居家拉伸、散步还是球类爱好者，<a href="https://page-vtiyu.com" style="color: #00695c; font-weight: 500; text-decoration: none; border-bottom: 2px solid #b2dfdb;">V体育</a> 都能成为你运动记录的便签本。它不替代专业教练，但足以陪你记录每一份小进展。</p>
+        <ul>
+          <li>每周几次规律活动</li>
+          <li>恢复期温和运动</li>
+          <li>简单记录运动时长与反馈</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 使用建议 + 访问说明 -->
+    <div class="advice-section">
+      <h2>使用建议 & 访问提醒</h2>
+      <div class="advice-grid">
+        <div class="advice-item">
+          <strong>🏃 循序渐进</strong>
+          <p>从短时轻度活动开始，留意身体感受。V体育 的记录功能可以帮助你回顾每周运动量，但请根据自身状态调整。</p>
+        </div>
+        <div class="advice-item">
+          <strong>📱 移动习惯</strong>
+          <p>手机端浏览更顺手，但页面同样适配桌面。建议在稳定网络下使用，数据加载更流畅。</p>
+        </div>
+        <div class="advice-item">
+          <strong>🔍 保持客观</strong>
+          <p>所有数据仅供个人参考，不作为医疗或训练依据。运动前请充分热身，不适即停。</p>
+        </div>
+        <div class="advice-item">
+          <strong>🛡️ 访问说明</strong>
+          <p>直接通过浏览器访问即可，无需额外注册。页面未收集敏感信息，可放心使用。</p>
+        </div>
+      </div>
+      <!-- 嵌入链接的自然句子 -->
+      <div class="note-box">
+        💡 若想了解更详细的功能与界面，可前往 <a href="https://page-vtiyu.com">V体育</a> 自行探索。页面风格简洁，所有内容均以引导为主，不设强制弹窗或夸大引导。
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h2>常见疑问 · 简短摘要</h2>
+      <div class="faq-item">
+        <q>需要注册或登录吗？</q>
+        <p>目前可以直接浏览和使用基础功能，不强制创建账户。部分个性化记录可选择本地保存。</p>
+      </div>
+      <div class="faq-item">
+        <q>是否适合高强度训练者？</q>
+        <p>它更偏向日常活动记录与提醒，专业运动员建议配合专用分析工具。但作为补充备忘也很友好。</p>
+      </div>
+      <div class="faq-item">
+        <q>数据会同步到其他设备吗？</q>
+        <p>现阶段以单设备本地存储为主，未来可能提供可选同步，请留意页面更新说明。</p>
+      </div>
+      <div class="faq-item">
+        <q>移动端与桌面端体验一致吗？</q>
+        <p>已经针对手机与平板做了布局适配，但部分交互元素在电脑上查看时更宽敞。你可以随时在 <a href="https://page-vtiyu.com" style="color: #00695c; text-decoration: underline dotted;">V体育</a> 页面切换设备试试看。</p>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+      <p>一份简明指南 · 基于日常运动与访问习惯整理 · 无夸大引导<br>
+      更多信息请参考 <a href="https://page-vtiyu.com">V体育</a> 内页说明</p>
+    </div>
+
+  </div>
+</body>
+</html>
